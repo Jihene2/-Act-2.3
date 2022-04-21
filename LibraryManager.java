@@ -1,9 +1,11 @@
 package gestion_biblio;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 
 public class LibraryManager {
 
@@ -17,6 +19,8 @@ public class LibraryManager {
 			livrepret();
 			livreUser(2);
 			rechercheUserparID(4);
+		//	createUser(15,"mohamed", "ali", "tunis", 52081555, "mohamed.ali@gmail.com",1);
+			 
 			
 		
 		}
@@ -191,5 +195,36 @@ public class LibraryManager {
 			   ex.printStackTrace();
 	 }
 	 }
+ 	//Une méthode permettant de créer un utilisateur
  	 
+ 
+	 public static void createUser(int id_user, String prenom, String nom,String adress,int numTel,String mail,int ref_rent ) {
+		 try {
+			   Connection cn = connecterDB();
+			   Statement st ;
+			   st= cn.createStatement();
+			   st.executeUpdate("INSERT INTO `user` (`id_user`, `prenom`, `nom`, `adress`, `numTel`, `mail`, `ref_rent`) VALUES ("+id_user+", '"+prenom+"', '"+nom+"', '"+adress+"', "+numTel+", '"+mail+"',"+ref_rent+")");
+			   System.out.println("utilisateur ajouté avec succés");
+			  
+		   }catch (Exception ex) { 
+			   ex.printStackTrace();
+		   }
+		 
+		 
+	 }
+	 
+	 // Une méthode permettant de créer un prêt;
+	 
+	 public static void createRent(int id_rent, Date DatePret , Date DateFin,int ref_book,int ref_user) {
+		 try {
+			   Connection cn = connecterDB();
+			   Statement st ;
+			   st= cn.createStatement();
+			   st.executeUpdate("INSERT INTO `rent` (`id_rent`, `DatePret`, `DateFin`, `ref_book`, `ref_user`) VALUES ("+id_rent+", "+DatePret+", "+DateFin+", "+ref_book+", "+ref_user+")");
+			   System.out.println("Prêt ajouté avec succés");
+			  
+		   }catch (Exception ex) { 
+			   ex.printStackTrace();
+		   }
+}
 }

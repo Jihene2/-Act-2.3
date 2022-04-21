@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 21 avr. 2022 à 13:39
+-- Généré le : jeu. 21 avr. 2022 à 15:09
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `mail` varchar(128) NOT NULL,
   `ref_rent` int NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `user`
@@ -126,7 +126,8 @@ INSERT INTO `user` (`id_user`, `prenom`, `nom`, `adress`, `numTel`, `mail`, `ref
 (1, 'jihene', 'saidene', 'ezzahra', 52081543, 'jihene.saidene@gmail.com', 4),
 (2, 'Ghada', 'Ghram', 'Mourouj', 52081544, 'ghada.ghram@gmail.com', 1),
 (3, 'ines', 'masmoudi', 'tunis', 52081545, 'ines.masmoudi@gmail.com', 2),
-(4, 'ghada', 'tayeg', 'Ariana', 52081543, 'ghada.tayeg@gmail.com', 3);
+(4, 'ghada', 'tayeg', 'Ariana', 52081543, 'ghada.tayeg@gmail.com', 3),
+(15, 'mohamed', 'ali', 'tunis', 52081555, 'mohamed.ali@gmail.com', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
